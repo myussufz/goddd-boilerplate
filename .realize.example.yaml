@@ -1,0 +1,34 @@
+settings:
+  files:
+    outputs:
+      status: false
+      path: ''
+      name: storage/log/server.log
+  legacy:
+    force: true
+    interval: 0ms
+schema:
+  - name: goddd-boilerplate
+    path: .
+    env:
+      SYSTEM_PATH: 'http://localhost:1234'
+      MONGODB_HOST: ''
+      MONGODB_NAME: ''
+      MONGODB_USERNAME: ''
+      MONGODB_PASSWORD: ''
+      SECRET_KEY: 'secret'
+      JWT_KEY: 'secret'
+      ENV: 'development'
+    commands:
+      install:
+        status: true
+      run:
+        status: true
+    watcher:
+      extensions:
+        - go
+      paths:
+        - /
+      ignored_paths:
+        - .git
+        - .realize
